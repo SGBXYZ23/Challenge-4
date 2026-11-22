@@ -12,7 +12,8 @@ int main()
 
     while (true)
     {
-        
+		//Checks for a valid input.
+
         cout << "Enter some text: ";
 
         if (!getline(cin, text))
@@ -20,9 +21,11 @@ int main()
             break;
         }
 
-        // Validate the input
+       
         if (text.empty())
         {
+            cin.clear();
+            cin.ignore(1000, '\n');
             cerr << "[!] ERROR: Invalid input, nothing entered. Try again." << endl;
             continue;
         }
